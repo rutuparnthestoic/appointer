@@ -8,7 +8,10 @@ const fontSans = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ['300','400','5
 
 export const metadata: Metadata = {
   title: "Appointer",
-  description: "A Hospital Management System",
+  description: "An Appointment Management System",
+  icons: {
+    icon: '/assets/icons/favicon.png'
+  }
 };
 
 export default function RootLayout({
