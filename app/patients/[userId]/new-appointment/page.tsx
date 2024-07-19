@@ -1,43 +1,40 @@
+import NewAppointmentForm from "@/components/forms/NewAppointmentForm";
 import PatientForm from "@/components/forms/PatientForm";
-import PasskeyModal from "@/components/PasskeyModal";
 import { Button } from "@/components/ui/button";
+import { getPatient } from "@/lib/actions/patient.actions";
 import Image from "next/image";
 import Link from "next/link";
+import * as Sentry from '@sentry/nextjs'
 
-export default function Home({searchParams}: SearchParamProps) {
-  const isAdmin = searchParams.admin === 'true';
-
+export default async function NewAppointment({params: {userId}}: SearchParamProps ) {
+  const patient = await getPatient(userId);
+  Sentry.metrics.set("user_view_new-appointment", patient.name);
   return (
     <div className="flex h-screen max-h-screen">
-      {isAdmin && <PasskeyModal />}
-
       <section className="remove-scrollbar container my-auto"> 
-        <div className="sub-container max-w-[496px]">
+        <div className="sub-container max-w-[560px]">
           <Image 
           src="/assets/icons/logo-full.png"
           alt="logo"
-          height={1100}
-          width={1100}
+          height={1000}
+          width={1000}
           className="mb-12 h-14 w-fit"
           />
-          <PatientForm />
+          <NewAppointmentForm type='create' userId={userId} patientId={patient.$id}/>
           <div className="mt-20 flex justify-between text-14-regular">
             <p className="justify-items-end text-dark-600 xl:text-left">
              Developed by Rutuparn Kakade
             </p>
-            <Link href="/?admin=true" className="text-green-500">
-            Admin
-            </Link>
           </div>
         </div>
       </section>
 
       <Image 
-      src="/assets/images/onboarding-img.png"
-      alt="onboarding-img"
+      src="/assets/images/appointment-img.png"
+      alt="appointment-img"
       height={1000}
       width={1000}
-      className="side-img max-w-[50%]"
+      className="side-img max-w-[390px] bg-bottom"
       />
     </div>
   );
