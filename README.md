@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Appointer : An Appointment management application
 
-## Getting Started
+A Full stack Appointment management system developed using Next JS 14 and Appwrite.
 
-First, run the development server:
+# Key Features :
+1. Easy sign-up: Just enter your name, email, and phone number.
+2. Simple booking: Fill out a form, choose your doctor and date - all in one go.
+3. Efficient management: Hospitals can easily schedule, cancel, and track appointments.
+4. Instant SMS updates: Get SMS alerts about your appointment status.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech Stack 
+
+1. Next.js 14 
+2. Appwrite
+3. Twilio
+4. Tailwind CSS
+5. Shadcn UI
+
+
+## Get Started
+
+After cloning the project, follow these steps : 
+1. Add .env.local file and add the following variables (get them from Appwrite)
+- PROJECT_ID 
+- API_KEY 
+- DB_ID 
+- PATIENT_COLLECTION_ID 
+- DOCTOR_COLLECTION_ID
+- APPOINTMENT_COLLECTION_ID
+- NEXT_PUBLIC_BUCKET_ID 
+- NEXT_PUBLIC_ENDPOINT = https://cloud.appwrite.io/v1
+- NEXT_PUBLIC_ADMIN_PASSKEY 
+
+2. Run the following commands : 
 ```
+# Install the dependencies : 
+npm install 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Run the project locally
+npm run dev 
+```
